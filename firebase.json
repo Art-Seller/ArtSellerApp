@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "artsellerapp",
+    "public": "dist/artseller-app/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
