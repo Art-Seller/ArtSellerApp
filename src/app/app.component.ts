@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
+import { NgOptimizedImage } from '@angular/common'
+import { HeaderComponent } from './shared/components/header/header.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet,HeaderComponent],
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  title = 'artseller-app';
+  title = 'Artseller-app';
 }
