@@ -8,5 +8,5 @@ import { NgOptimizedImage } from '@angular/common'
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  applogo="https://www.fnordware.com/superpng/pnggrad16rgb.png"
+  applogo="https://www.fnordware.com/superpng/pnggrad16rgb.png  "
 }

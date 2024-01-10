@@ -2,3 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.fa-flag{
+    color: #6c7c99;
+}
+
+.fa-flag:hover {
+    color: white;
+}
