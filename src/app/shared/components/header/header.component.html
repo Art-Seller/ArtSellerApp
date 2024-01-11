@@ -41,12 +41,14 @@
     <span class="xl:text-3xl sm:text-xl font-mono">Art</span>
     <span class="font-bold xl:text-3xl sm:text-xl font-mono">Seller</span>
   </div>
-  <div class="flex gap-6 justify-end">
-    <i class="fa-solid fa-2x cursor-pointer fa-user"></i>
-    <i
+  <div class="flex gap-6 items-center justify-end select-none">
+    <div
       (click)="toggleMenu()"
-      class="fa-sharp fa-solid fa-bars fa-2x cursor-pointer xl:hidden select-none"
-    ></i>
+      class="menu-btn"
+      [ngClass]="{ '': !menuState, open: menuState }"
+    >
+      <div class="menu-btn__burger"></div>
+    </div>
   </div>
 </div>
 
@@ -54,17 +56,18 @@
 
 <div
   [ngClass]="{
-    'transition-all h-0 ease-in-out  duration-150 -translate-y-2.5 opacity-0': !menuState,
+    'transition-all h-0 ease-in-out  duration-150 -translate-y-2.5 opacity-0':
+      !menuState,
     'h-[308px] transition-all duration-300  translate-y-0 opacity-1 ': menuState
   }"
   class="w-full z-0 absolute bg-firefly text-white"
 >
-  <div class="divide-y-2">
-    <div class="p-4 text-center text-xl font-medium">Get Started</div>
-    <div class="p-4 text-center text-xl font-medium">How it Works?</div>
-    <div class="p-4 text-center text-xl font-medium">Gallery</div>
-    <div class="p-4 text-center text-xl font-medium">Pricing</div>
-    <div class="p-4 text-center text-xl font-medium">About Us</div>
+  <div class="divide-y-2 text-xl font-medium text-center">
+    <div class="p-4">Get Started</div>
+    <div class="p-4">How it Works?</div>
+    <div class="p-4">Gallery</div>
+    <div class="p-4">Pricing</div>
+    <div class="p-4">About Us</div>
   </div>
 </div>
 
