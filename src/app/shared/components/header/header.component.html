@@ -41,14 +41,14 @@
     <span class="xl:text-3xl sm:text-xl font-mono">Art</span>
     <span class="font-bold xl:text-3xl sm:text-xl font-mono">Seller</span>
   </div>
-  <div class="flex gap-6 items-center justify-end select-none">
-    <div
-      (click)="toggleMenu()"
-      class="menu-btn"
-      [ngClass]="{ '': !menuState, open: menuState }"
-    >
-      <div class="menu-btn__burger"></div>
-    </div>
+  <div class="flex gap-4 items-center justify-end select-none">
+    <i class="fa-solid fa-user fa-xl mt-2 "></i>
+    <button (click)="toggleMenu()" [ngClass]="{'expanded':menuState}"  class="button-three sm:block xl:hidden" aria-controls="primary-navigation" aria-expanded="false">
+      <svg stroke="var(--button-color)" fill="none" class="hamburger" viewBox="-20 -20 120 120" width="50">
+        <path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
+        </path>
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -62,7 +62,7 @@
   }"
   class="w-full z-0 absolute bg-firefly text-white"
 >
-  <div class="divide-y-2 text-xl font-medium text-center">
+  <div class="divide-y-2 text-xl font-medium text-center select-none">
     <div class="p-4">Get Started</div>
     <div class="p-4">How it Works?</div>
     <div class="p-4">Gallery</div>
