@@ -14,7 +14,8 @@ module.exports = {
       bgColor: "#141414",
       cardGray: "#1E2329",
       violet: '#6770b7',
-      firefly: '#06233B'
+      firefly: '#06233B',
+      nileblue: '#1e384e'
     },
     screens: {
       xs:  "320px",

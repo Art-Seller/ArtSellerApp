@@ -12,6 +12,9 @@
     color: white;
 }
 
+
+
+/* Hamburger Animation */
 .button-three {
   --button-color: black;
   overflow: hidden;
@@ -31,4 +34,5 @@
   stroke-dasharray: 60 105 60 300;
   stroke-dashoffset: -90;
 }
+
 

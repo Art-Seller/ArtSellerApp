@@ -17,22 +17,19 @@
 
 <!-- HEADER -->
 <div
-  class="xl:grid grid-cols-3 sm:flex sm:justify-between items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
+  class="xl:grid grid-cols-3 w-full sm:flex sm:justify-between items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
 >
-  <div class="xl:flex text-base gap-6 sm:hidden">
-    <span class="hover:underline cursor-pointer hover:scale-110 select-none"
+  <div class="xl:flex xl:text-base xxl:text-xl gap-6 font-sans sm:hidden">
+    <span class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
       >Get Started</span
     >
-    <span class="hover:underline cursor-pointer hover:scale-110 select-none"
-      >How It Works ?</span
-    >
-    <span class="hover:underline cursor-pointer hover:scale-110 select-none"
-      >Pricing</span
-    >
-    <span class="hover:underline cursor-pointer hover:scale-110 select-none"
+    <span routerLink="/gallery" class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
       >Gallery</span
     >
-    <span class="hover:underline cursor-pointer hover:scale-110 select-none"
+    <span routerLink="/pricing" class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
+      >Pricing</span
+    >
+    <span routerLink="/about-us" class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
       >About Us</span
     >
   </div>
@@ -42,11 +39,28 @@
     <span class="font-bold xl:text-3xl sm:text-xl font-mono">Seller</span>
   </div>
   <div class="flex gap-4 items-center justify-end select-none">
-    <i class="fa-solid fa-user fa-xl mt-2 "></i>
-    <button (click)="toggleMenu()" [ngClass]="{'expanded':menuState}"  class="button-three sm:block xl:hidden" aria-controls="primary-navigation" aria-expanded="false">
-      <svg stroke="var(--button-color)" fill="none" class="hamburger" viewBox="-20 -20 120 120" width="50">
-        <path class="line" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
-        </path>
+    <i class="fa-solid fa-user fa-xl mt-2"></i>
+    <button
+      (click)="toggleMenu()"
+      [ngClass]="{ expanded: menuState }"
+      class="button-three sm:block xl:hidden"
+      aria-controls="primary-navigation"
+      aria-expanded="false"
+    >
+      <svg
+        stroke="var(--button-color)"
+        fill="none"
+        class="hamburger"
+        viewBox="-20 -20 120 120"
+        width="50"
+      >
+        <path
+          class="line"
+          stroke-width="10"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+        ></path>
       </svg>
     </button>
   </div>
@@ -56,19 +70,16 @@
 
 <div
   [ngClass]="{
-    'transition-all h-0 ease-in-out  duration-150 -translate-y-2.5 opacity-0':
+    'transition-all h-0 ease-in-out  duration-150 -translate-y-2.5 opacity-0 pointer-events-none':
       !menuState,
-    'h-[308px] transition-all duration-300  translate-y-0 opacity-1 ': menuState
+    'h-[246px] transition-all duration-300  translate-y-0 opacity-1 ': menuState
   }"
-  class="w-full z-0 absolute bg-firefly text-white"
+  class="w-full z-0 absolute  text-white xl:hidden"
 >
   <div class="divide-y-2 text-xl font-medium text-center select-none">
-    <div class="p-4">Get Started</div>
-    <div class="p-4">How it Works?</div>
-    <div class="p-4">Gallery</div>
-    <div class="p-4">Pricing</div>
-    <div class="p-4">About Us</div>
+    <div (click)="toggleMenu()" class="p-4 cursor-pointer hover:bg-nileblue  hover:scale-105 bg-firefly">Get Started</div>
+    <div (click)="toggleMenu()" routerLink="/gallery" class="p-4 cursor-pointer hover:bg-nileblue  hover:scale-105 bg-firefly">Gallery</div>
+    <div (click)="toggleMenu()" routerLink="/pricing" class="p-4 cursor-pointer hover:bg-nileblue  hover:scale-105 bg-firefly">Pricing</div>
+    <div (click)="toggleMenu()" routerLink="/about-us" class="p-4 cursor-pointer hover:bg-nileblue hover:scale-105 bg-firefly">About Us</div>
   </div>
 </div>
-
-<div class="z-10 text-teal-300 text-xl">3</div>
