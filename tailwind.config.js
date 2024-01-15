@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       fontFamily: {
         "noto-sans": ["Noto Sans", "sans-serif"],
+        "play-fair":["Playfair Display","serif"]
       }     
     },
     colors:{
