@@ -19,15 +19,33 @@
     <div class="sm:hiden xl:block"></div>
     <h1 class="font-play-fair text-4xl text-center select-none">Gallery</h1>
     <lr-file-uploader-regular
+      class="z-0"
       ctx-name="my-uploader"
       css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.5/web/lr-file-uploader-regular.min.css"
     ></lr-file-uploader-regular>
   </div>
 
   <div class="flex flex-wrap gap-4">
-    @for (uploadedFile of uploadedFiles; track uploadedFiles) {
-      @if (uploadedFile.cdnUrl) {
-        <img src="{{ uploadedFile.cdnUrl + '/-/preview/-/resize/x200/' }}" />
+    @for (file of files; track file) {
+      @if (file.originalFileUrl) {
+        <img
+          src="{{
+            'https://ucarecdn.com/' +
+              file.uuid +
+              '/-/scale_crop/300x300/-/format/auto/-/quality/smart_retina/'
+          }}"
+          alt="{{ file.originalFilename }}"
+          class="xl:block sm:hidden"
+        />
+        <img
+          src="{{
+            'https://ucarecdn.com/' +
+              file.uuid +
+              '/-/scale_crop/100x100/-/format/auto/-/quality/smart_retina/'
+          }}"
+          alt="{{ file.originalFilename }}"
+          class="xl:hidden sm:block"
+        />
       }
     }
   </div>
