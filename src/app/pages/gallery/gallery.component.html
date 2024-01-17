@@ -14,9 +14,8 @@
 
 <div class="">
   <div
-    class="xl:flex-row flex sm:flex-col items-center w-full border border-gray-900 p-4 mb-6 sm:justify-center sm:gap-4 xl:gap-0 xl:justify-between"
+    class="grid place-items-center border border-black gap-4 p-4 mb-5"
   >
-    <div class="sm:hiden xl:block"></div>
     <h1 class="font-play-fair text-4xl text-center select-none">Gallery</h1>
     <lr-file-uploader-regular
       class="z-0"
@@ -25,7 +24,7 @@
     ></lr-file-uploader-regular>
   </div>
 
-  <div class="flex flex-wrap gap-4">
+  <div class="flex flex-wrap gap-4 items-center justify-center">
     @for (file of files; track file) {
       @if (file.originalFileUrl) {
         <img

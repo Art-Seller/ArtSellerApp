@@ -16,5 +16,5 @@ export class HeaderComponent {
     this.menuState = !this.menuState;
   }
 
-  applogo="https://www.fnordware.com/superpng/pnggrad16rgb.png"
+  applogo="https://ucarecdn.com/81af85cb-a090-41ec-b4f0-b7d2dbd4084e/pnggrad16rgb.png"
 }

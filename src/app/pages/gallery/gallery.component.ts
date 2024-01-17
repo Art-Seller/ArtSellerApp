@@ -23,7 +23,7 @@ export class GalleryComponent implements OnInit {
     typeof LR.UploadCtxProvider.prototype
   >;
   
-  uploadedFiles: LR.OutputFileEntry[] = [];
+  // uploadedFiles: LR.OutputFileEntry[] = [];
   files: any[] = [];
 
   ngOnInit(): void {
