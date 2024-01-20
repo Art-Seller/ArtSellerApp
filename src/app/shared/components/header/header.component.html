@@ -1,83 +1,82 @@
-
 <!-- ANNOUNCEMENT -->
-<div
-  class="flex items-center w-full h-8 text-base font-semibold text-white bg-firefly sm:justify-center md:px-10 md:justify-between"
->
-  <div class="sm:hidden md:block"></div>
-  <span class="flex-grow text-center"
-    >Infuse Artistry into Your Photographs</span
+<div class="relative top-0 left-0 right-0 z-20 sm:fixed xl:static">
+  <div
+    class="flex items-center w-full h-8 text-base font-semibold text-white bg-firefly sm:justify-center md:px-10 md:justify-between"
   >
-  <div class="md:flex gap-2.5 sm:hidden">
-    <i class="cursor-pointer fa-brands fa-facebook fa-flag"></i>
-    <i class="cursor-pointer fa-brands fa-instagram fa-flag"></i>
-    <i class="cursor-pointer fa-brands fa-pinterest fa-flag"></i>
-    <i class="cursor-pointer fa-brands fa-youtube fa-flag"></i>
+    <div class="sm:hidden md:block"></div>
+    <span class="flex-grow text-center"
+      >Infuse Artistry into Your Photographs</span
+    >
+    <div class="md:flex gap-2.5 sm:hidden">
+      <i class="cursor-pointer fa-brands fa-facebook fa-flag"></i>
+      <i class="cursor-pointer fa-brands fa-instagram fa-flag"></i>
+      <i class="cursor-pointer fa-brands fa-pinterest fa-flag"></i>
+      <i class="cursor-pointer fa-brands fa-youtube fa-flag"></i>
+    </div>
   </div>
-</div>
 
-<!-- HEADER -->
-<div
-  class="xl:grid grid-cols-3 w-full sm:flex sm:justify-between shadow-2xl drop-shadow-lg  items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
->
-  <div class="gap-6 font-sans xl:flex xl:text-base xxl:text-xl sm:hidden">
-    <span
-      routerLink="/services"
-      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
-      >Get Started</span
-    >
-    <span
-      routerLink="/gallery"
-      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
-      >Gallery</span
-    >
-    <span
-      routerLink="/pricing"
-      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
-      >Pricing</span
-    >
-    <span
-      routerLink="/about-us"
-      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
-      >About Us</span
-    >
-  </div>
-  <div class="flex items-center justify-center select-none">
-    <img
-      routerLink="/"
-      class="w-10 h-10 mr-2 cursor-pointer"
-      src="{{ applogo }}"
-    />
-    <span class="font-mono xl:text-3xl sm:text-xl">Art</span>
-    <span class="font-mono font-bold xl:text-3xl sm:text-xl">Seller</span>
-  </div>
-  <div class="flex items-center justify-end gap-4 select-none">
-    <i class="mt-2 fa-solid fa-user fa-xl"></i>
-    <button
-      (click)="toggleMenu()"
-      [ngClass]="{ expanded: menuState }"
-      class="button-three sm:block xl:hidden"
-      aria-controls="primary-navigation"
-      aria-expanded="false"
-    >
-      <svg
-        stroke="var(--button-color)"
-        fill="none"
-        class="hamburger"
-        viewBox="-20 -20 120 120"
-        width="50"
+  <!-- HEADER -->
+  <div
+    class="xl:grid grid-cols-3 w-full sm:flex sm:justify-between bg-opacity-80 relative shadow-2xl bg-transparent bg-clip-padding backdrop-blur-lg drop-shadow-lg items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
+  >
+    <div class="gap-6 font-sans xl:flex xl:text-base xxl:text-xl sm:hidden">
+      <span
+        routerLink="/services"
+        class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
+        >Get Started</span
       >
-        <path
-          class="line"
-          stroke-width="10"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
-        ></path>
-      </svg>
-    </button>
+      <span
+        routerLink="/gallery"
+        class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
+        >Gallery</span
+      >
+      <span
+        routerLink="/pricing"
+        class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
+        >Pricing</span
+      >
+      <span
+        routerLink="/about-us"
+        class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
+        >About Us</span
+      >
+    </div>
+    <div class="flex items-center justify-center select-none">
+      <img
+        routerLink="/"
+        class="w-10 h-10 mr-2 cursor-pointer"
+        src="{{ applogo }}"
+      />
+      <span class="font-mono xl:text-3xl sm:text-xl">Art</span>
+      <span class="font-mono font-bold xl:text-3xl sm:text-xl">Seller</span>
+    </div>
+    <div class="flex items-center justify-end gap-4 select-none">
+      <i class="mt-2 fa-solid fa-user fa-xl"></i>
+      <button
+        (click)="toggleMenu()"
+        [ngClass]="{ expanded: menuState }"
+        class="button-three sm:block xl:hidden"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+      >
+        <svg
+          stroke="var(--button-color)"
+          fill="none"
+          class="hamburger"
+          viewBox="-20 -20 120 120"
+          width="50"
+        >
+          <path
+            class="line"
+            stroke-width="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70"
+          ></path>
+        </svg>
+      </button>
+    </div>
   </div>
-</div>
-
 <!-- MOBILE DROPDOWN -->
 
 <div
@@ -118,4 +117,5 @@
       About Us
     </div>
   </div>
+</div>
 </div>
