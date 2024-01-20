@@ -1,53 +1,57 @@
-<!-- ANNOUNCEMENT -->
 
+<!-- ANNOUNCEMENT -->
 <div
-  class="w-full h-8 font-semibold bg-firefly flex items-center sm:justify-center md:px-10 md:justify-between text-white text-base"
+  class="flex items-center w-full h-8 text-base font-semibold text-white bg-firefly sm:justify-center md:px-10 md:justify-between"
 >
   <div class="sm:hidden md:block"></div>
   <span class="flex-grow text-center"
     >Infuse Artistry into Your Photographs</span
   >
   <div class="md:flex gap-2.5 sm:hidden">
-    <i class="fa-brands fa-facebook fa-flag cursor-pointer"></i>
-    <i class="fa-brands fa-instagram fa-flag cursor-pointer"></i>
-    <i class="fa-brands fa-pinterest fa-flag cursor-pointer"></i>
-    <i class="fa-brands fa-youtube fa-flag cursor-pointer"></i>
+    <i class="cursor-pointer fa-brands fa-facebook fa-flag"></i>
+    <i class="cursor-pointer fa-brands fa-instagram fa-flag"></i>
+    <i class="cursor-pointer fa-brands fa-pinterest fa-flag"></i>
+    <i class="cursor-pointer fa-brands fa-youtube fa-flag"></i>
   </div>
 </div>
 
 <!-- HEADER -->
 <div
-  class="xl:grid grid-cols-3 w-full sm:flex sm:justify-between items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
+  class="xl:grid grid-cols-3 w-full sm:flex sm:justify-between shadow-2xl drop-shadow-lg  items-center xl:py-7 xl:px-9 sm:py-3.5 sm:px-4 border-b"
 >
-  <div class="xl:flex xl:text-base xxl:text-xl gap-6 font-sans sm:hidden">
+  <div class="gap-6 font-sans xl:flex xl:text-base xxl:text-xl sm:hidden">
     <span
       routerLink="/services"
-      class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
+      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
       >Get Started</span
     >
     <span
       routerLink="/gallery"
-      class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
+      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
       >Gallery</span
     >
     <span
       routerLink="/pricing"
-      class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
+      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
       >Pricing</span
     >
     <span
       routerLink="/about-us"
-      class="hover:underline underline-offset-4 cursor-pointer hover:scale-110 select-none"
+      class="cursor-pointer select-none hover:underline underline-offset-4 hover:scale-110"
       >About Us</span
     >
   </div>
   <div class="flex items-center justify-center select-none">
-    <img routerLink="/" class="h-10 w-10 mr-2 cursor-pointer" src="{{ applogo }}" />
-    <span class="xl:text-3xl sm:text-xl font-mono">Art</span>
-    <span class="font-bold xl:text-3xl sm:text-xl font-mono">Seller</span>
+    <img
+      routerLink="/"
+      class="w-10 h-10 mr-2 cursor-pointer"
+      src="{{ applogo }}"
+    />
+    <span class="font-mono xl:text-3xl sm:text-xl">Art</span>
+    <span class="font-mono font-bold xl:text-3xl sm:text-xl">Seller</span>
   </div>
-  <div class="flex gap-4 items-center justify-end select-none">
-    <i class="fa-solid fa-user fa-xl mt-2"></i>
+  <div class="flex items-center justify-end gap-4 select-none">
+    <i class="mt-2 fa-solid fa-user fa-xl"></i>
     <button
       (click)="toggleMenu()"
       [ngClass]="{ expanded: menuState }"
@@ -82,9 +86,9 @@
       !menuState,
     'h-[246px] transition-all duration-300  translate-y-0 opacity-1 ': menuState
   }"
-  class="w-full z-10 absolute text-white xl:hidden"
+  class="absolute z-10 w-full text-white xl:hidden"
 >
-  <div class="divide-y-2 text-xl font-medium text-center select-none">
+  <div class="text-xl font-medium text-center divide-y-2 select-none">
     <div
       (click)="toggleMenu()"
       routerLink="/services"

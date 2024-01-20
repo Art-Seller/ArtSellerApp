@@ -12,11 +12,11 @@
 
 <!-- Gallery Start -->
 
-<div class="">
+<div class="p-4">
   <div
-    class="grid place-items-center border border-black gap-4 p-4 mb-5"
+    class="grid gap-4 p-4 mb-5 border border-black place-items-center"
   >
-    <h1 class="font-play-fair text-4xl text-center select-none">Gallery</h1>
+    <h1 class="text-4xl text-center select-none font-play-fair">Gallery</h1>
     <lr-file-uploader-regular
       class="z-0"
       ctx-name="my-uploader"
@@ -24,7 +24,7 @@
     ></lr-file-uploader-regular>
   </div>
 
-  <div class="flex flex-wrap gap-4 items-center justify-center">
+  <div class="flex flex-wrap items-center justify-center gap-4">
     @for (file of files; track file) {
       @if (file.originalFileUrl) {
         <img
