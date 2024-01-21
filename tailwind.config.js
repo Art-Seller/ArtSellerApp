@@ -11,6 +11,8 @@ module.exports = {
       },
       backgroundImage:({
         'landingpage-pattern': "url('/assets/images/getstarted.jpg')",
+        'landingpage-backdrop': "url('/assets/images/landing.png')",
+        'paper-backdrop': "url('/assets/images/white-texture.jpeg'),url('/assets/images/landing.png')",
        })     
     },
     colors:{
