@@ -6,37 +6,25 @@ import {
   OnInit,
 } from '@angular/core';
 import { UploadcareService } from '../../core/services/uploadcare.service';
+import { ImageUploaderComponent } from '../../shared/components/image-uploader/image-uploader.component';
 import * as LR from '@uploadcare/blocks';
 
 LR.registerBlocks(LR);
 @Component({
   selector: 'app-gallery',
   standalone: true,
-  imports: [],
+  imports: [ImageUploaderComponent],
   templateUrl: './gallery.component.html',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class GalleryComponent implements OnInit {
   constructor(private uploadcareService: UploadcareService) {}
 
-  @ViewChild('ctxProvider', { static: true }) ctxProvider!: ElementRef<
-    typeof LR.UploadCtxProvider.prototype
-  >;
-  
+ 
   // uploadedFiles: LR.OutputFileEntry[] = [];
   files: any[] = [];
 
   ngOnInit(): void {
     this.getFiles();
-
-    this.ctxProvider.nativeElement.addEventListener(
-      'data-output',
-      this.handleUploadEvent,
-    );
-    this.ctxProvider.nativeElement.addEventListener(
-      'done-flow',
-      this.handleDoneFlow,
-    );
   }
 
   async getFiles() {
@@ -51,20 +39,5 @@ export class GalleryComponent implements OnInit {
   }
   
 
-  handleUploadEvent = (e: Event) => {
-    // Show the Image after Upload Logic
-
-    // if (!(e instanceof CustomEvent)) {
-    //   return;
-    // }
-
-    // if (e.detail) {
-    //   this.uploadedFiles = e.detail as LR.OutputFileEntry[];
-    // }
-
-  };
-
-  handleDoneFlow = () => {
-    console.log('handleDoneFlow');
-  };
+ 
 }

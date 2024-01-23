@@ -3,6 +3,7 @@
 import { Injectable } from '@angular/core';
 import {
   listOfFiles,
+  ListOfFilesResponse,
   UploadcareSimpleAuthSchema,
 } from '@uploadcare/rest-client';
 
@@ -19,7 +20,7 @@ export class UploadcareService {
     });
   }
 
-  async getListOfFiles(): Promise<any> {
+  async getListOfFiles(): Promise<ListOfFilesResponse> {
     try {
       const result = await listOfFiles({}, { authSchema: this.uploadcareSimpleAuthSchema });
       return result;

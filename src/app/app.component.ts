@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { LandingComponent } from './shared/components/landing/landing.component';
-import * as LR from '@uploadcare/blocks';
 
-LR.registerBlocks(LR)
 
 
 @Component({
@@ -13,7 +11,6 @@ LR.registerBlocks(LR)
   standalone: true,
   imports: [CommonModule, RouterOutlet,HeaderComponent,LandingComponent],
   templateUrl: './app.component.html',
-  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
   title = 'Artseller-app';

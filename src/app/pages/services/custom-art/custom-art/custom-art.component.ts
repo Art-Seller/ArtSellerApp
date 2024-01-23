@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 
+
 @Component({
   selector: 'app-custom-art',
   standalone: true,
@@ -26,13 +27,5 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './custom-art.component.html',
 })
 export class CustomArtComponent {
-  firstFormGroup = this._formBuilder.group({
-    firstCtrl: ['', Validators.required],
-  });
-  secondFormGroup = this._formBuilder.group({
-    secondCtrl: ['', Validators.required],
-  });
-  isLinear = false;
-
-  constructor(private _formBuilder: FormBuilder) {}
+    
 }

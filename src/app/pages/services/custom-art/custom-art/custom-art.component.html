@@ -2,59 +2,67 @@
   class="flex flex-col items-center justify-center px-4 pb-4 xl:pt-4 sm:pt-32"
 >
   <div class="flex">
-    <mat-stepper orientation="vertical" [linear]="false" #stepper>
-      <mat-step [stepControl]="firstFormGroup">
-        <div class="flex mt-5">
-          <ng-template matStepLabel>Upload Your Image</ng-template>
+    <mat-stepper orientation="vertical" [linear]="true" #stepper>
+      <mat-step>
+        <ng-template matStepLabel>Upload your Image</ng-template>
+        <ng-template matStepContent>
           <input type="file" />
-        </div>
+          <button mat-button matStepperNext>Next</button>
+        </ng-template>
       </mat-step>
 
-      <mat-step [stepControl]="firstFormGroup">
-        <ng-template matStepLabel>Number of People</ng-template>
-        <select
-          class="p-1 mt-5 border cursor-pointer border-regalblue bg-bluelily rounded-2xl"
-          name="No of People"
-          id=""
-        >
-          <option value="0">Choose the Number of People</option>
-          <option value="1">0</option>
-          <option value="2">1</option>
-          <option value="3">2</option>
-          <option value="4">3</option>
-          <option value="5">4</option>
-          <option value="6">5+</option>
-        </select>
+      <mat-step>
+        <ng-template matStepLabel>Choose the Number of Persons</ng-template>
+        <ng-template matStepContent>
+          <select
+            class="p-1 mt-5 border cursor-pointer border-regalblue bg-bluelily rounded-2xl"
+            name="No of People"
+            id=""
+          >
+            <option value="1">0</option>
+            <option value="2">1</option>
+            <option value="3">2</option>
+            <option value="4">3</option>
+            <option value="5">4</option>
+            <option value="6">5+</option>
+          </select>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </ng-template>
       </mat-step>
 
-      <mat-step [stepControl]="firstFormGroup">
-        <ng-template matStepLabel>Choose Your Canvas Size</ng-template>
-        <select
-          class="p-2 mt-5 border cursor-pointer border-regalblue bg-bluelily rounded-2xl"
-          name="No of People"
-          id=""
-        >
-          <option value="0">All Available Sizes in Inches</option>
-          <option value="1">8x10 in</option>
-          <option value="2">11x14 in</option>
-          <option value="3">12x16 in</option>
-          <option value="4">16x20 in</option>
-          <option value="5">20x24 in</option>
-          <option value="6">24x36 in</option>
-          <option value="7">30x40 in</option>
-          <option value="8">36x48 in</option>
-          <option value="9">48x72 in</option>
-        </select>
+      <mat-step>
+        <ng-template matStepLabel>Choose Your Canvas Size(inches)</ng-template>
+        <ng-template matStepContent>
+          <select
+            class="p-2 mt-5 border cursor-pointer border-regalblue bg-bluelily rounded-2xl"
+            name="No of People"
+            id=""
+          >
+            <option value="1">8x10 in</option>
+            <option value="2">11x14 in</option>
+            <option value="3">12x16 in</option>
+            <option value="4">16x20 in</option>
+            <option value="5">20x24 in</option>
+            <option value="6">24x36 in</option>
+            <option value="7">30x40 in</option>
+            <option value="8">36x48 in</option>
+            <option value="9">48x72 in</option>
+          </select>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </ng-template>
       </mat-step>
 
-      <mat-step [stepControl]="firstFormGroup">
-        <ng-template matStepLabel>Review Your Cart</ng-template>
+      <mat-step>
+        <ng-template matStepLabel>Review Changes</ng-template>
         <div
           routerLink="/"
           class="flex items-center justify-center p-3 mt-5 text-xl border cursor-pointer border-violet hover:bg-violet hover:text-white"
         >
           SUBMIT
         </div>
+        <button mat-button matStepperPrevious>Back</button>
       </mat-step>
     </mat-stepper>
   </div>

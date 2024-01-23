@@ -1,0 +1,21 @@
+<lr-config
+  ctx-name="my-uploader"
+  pubkey="5e967ecdb0579b9e7d69"
+  max-local-file-size-bytes="10000000"
+  multiple="false"
+  img-only="true"
+  removeCopyright="true"
+  source-list="local, url, camera, facebook, gdrive, gphotos, instagram"
+  use-cloud-image-editor="false"
+></lr-config>
+<lr-upload-ctx-provider
+  ctx-name="my-uploader"
+  #ctxProvider
+></lr-upload-ctx-provider>
+
+<lr-file-uploader-regular
+css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.5/web/lr-file-uploader-regular.min.css"
+ctx-name="my-uploader"
+class="my-config"
+>
+</lr-file-uploader-regular>
