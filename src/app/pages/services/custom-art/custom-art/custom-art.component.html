@@ -1,13 +1,49 @@
-<div
-  class="flex flex-col items-center justify-center px-4 pb-4 xl:pt-4 sm:pt-32"
->
+<lr-config
+  ctx-name="my-uploader"
+  pubkey="344e29953119e1cab885"
+  max-local-file-size-bytes="10000000"
+  removeCopyright="true"
+  multiple="true"
+  img-only="true"
+  source-list="local, url, camera, facebook, gdrive, gphotos, instagram"
+></lr-config>
+
+<lr-upload-ctx-provider
+  ctx-name="my-uploader"
+  #ctxProvider
+></lr-upload-ctx-provider>
+
+<div class="flex flex-col justify-center px-4 pb-4 xl:pt-4 sm:pt-32">
+  <h1
+    class="py-5 font-bold text-center text-nileblue sm:text-xl xl:text-5xl font-play-fair"
+  >
+    Custom Sketch
+  </h1>
   <div class="flex">
     <mat-stepper orientation="vertical" [linear]="true" #stepper>
       <mat-step>
         <ng-template matStepLabel>Upload your Image</ng-template>
-        <ng-template matStepContent>
-          <input type="file" />
-          <button mat-button matStepperNext>Next</button>
+        <ng-template matStepContent class="">
+          <div class="py-5">
+            <div class="flex gap-5">
+              <lr-file-uploader-regular
+                css-src="https://cdn.jsdelivr.net/npm/@uploadcare/blocks@0.30.5/web/lr-file-uploader-regular.min.css"
+                ctx-name="my-uploader"
+                class="my-config"
+              >
+              </lr-file-uploader-regular>
+              <div class="flex w-auto gap-5 sm:flex-col md:flex-row">
+                @for (uploadedFile of uploadedFiles; track uploadedFiles) {
+                  @if (uploadedFile.cdnUrl) {
+                    <img src="{{ uploadedFile.cdnUrl }}" class="w-20 h-20" />
+                  }
+                }
+              </div>
+            </div>
+          </div>
+          <button mat-button matStepperNext class="text-bluelily">
+            Next Step &#8594;
+          </button>
         </ng-template>
       </mat-step>
 

@@ -44,3 +44,11 @@
   stroke-dasharray: 60 105 60 300;
   stroke-dashoffset: -90;
 }
+
+/* Upload Care Uploader */
+.my-config {
+  --darkmode: 0;
+  --h-accent: 223;
+  --s-accent: 100%;
+  --l-accent: 61%;
+}

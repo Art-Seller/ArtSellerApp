@@ -1,12 +1,9 @@
 import {
-  CUSTOM_ELEMENTS_SCHEMA,
   Component,
-  ViewChild,
-  ElementRef,
   OnInit,
 } from '@angular/core';
 import { UploadcareService } from '../../core/services/uploadcare.service';
-import { ImageUploaderComponent } from '../../shared/components/image-uploader/image-uploader.component';
+import { ImageUploaderComponent } from '../../shared/components/gallery-image-uploader/image-uploader.component';
 import * as LR from '@uploadcare/blocks';
 
 LR.registerBlocks(LR);
