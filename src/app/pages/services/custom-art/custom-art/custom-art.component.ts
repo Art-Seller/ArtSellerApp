@@ -6,7 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { CartService } from '../../../../core/services/cart.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import * as LR from '@uploadcare/blocks';
 LR.registerBlocks(LR);
@@ -20,7 +20,8 @@ LR.registerBlocks(LR);
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule,    RouterLink,
+    MatInputModule,   
+    RouterLink,
   ],
   templateUrl: './custom-art.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -29,7 +30,7 @@ export class CustomArtComponent implements OnInit {
 
   
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private cartService: CartService) {
     // Initialize the form with empty form controls
     this.form = this.fb.group({
       imageUrl :{},
@@ -42,6 +43,7 @@ export class CustomArtComponent implements OnInit {
   submitForm(): void {
     // Access form data from 'this.formData' and send it to the cart service
     // Example: cartService.addToCart(this.formData);
+    this.cartService.addToCart(this.formData); 
     console.log('Form Data:', this.formData);
   }
 

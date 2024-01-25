@@ -1,0 +1,22 @@
+<h2>Orders</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Image URL</th>
+      <th>Number of People</th>
+      <th>Canvas Size</th>
+      <!-- Add more columns if needed -->
+    </tr>
+  </thead>
+  <tbody>
+    @for (order of orders; track order) {
+      <tr>
+        <td>{{ order.imageUrl }}</td>
+        <td>{{ order.numberOfPeople }}</td>
+        <td>{{ order.canvasSize }}</td>
+      </tr>
+    }
+
+    <!-- Add more columns if needed -->
+  </tbody>
+</table>
