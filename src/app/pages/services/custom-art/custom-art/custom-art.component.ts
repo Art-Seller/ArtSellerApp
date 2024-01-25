@@ -6,6 +6,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
+import { NgModel } from '@angular/forms';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import * as LR from '@uploadcare/blocks';
 LR.registerBlocks(LR);
 
@@ -18,13 +20,38 @@ LR.registerBlocks(LR);
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule,
-    RouterLink,
+    MatInputModule,    RouterLink,
   ],
   templateUrl: './custom-art.component.html',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CustomArtComponent implements OnInit {
+
+  
+
+  constructor(private fb: FormBuilder) {
+    // Initialize the form with empty form controls
+    this.form = this.fb.group({
+      imageUrl :{},
+      numberOfPeople: ['0'],
+      canvasSize: ['8x10 in'],
+      // Add more form controls as needed for other steps
+    });
+  }
+
+  submitForm(): void {
+    // Access form data from 'this.formData' and send it to the cart service
+    // Example: cartService.addToCart(this.formData);
+    console.log('Form Data:', this.formData);
+  }
+
+
+  form: FormGroup;
+  formData = {
+    imageUrl:{},
+    numberOfPeople: '0',
+    canvasSize: '8x10 in', // Set this to the default canvas size
+  };
 
   @ViewChild('ctxProvider', { static: true }) ctxProvider!: ElementRef<
     typeof LR.UploadCtxProvider.prototype
@@ -57,7 +84,9 @@ export class CustomArtComponent implements OnInit {
 
   };
 
+
+
   handleDoneFlow = () => {
-    console.log('handleDoneFlow');
+    this.formData.imageUrl=this.uploadedFiles
   };
 }
