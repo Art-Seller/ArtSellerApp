@@ -1,22 +1,32 @@
-<h2>Orders</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Image URL</th>
-      <th>Number of People</th>
-      <th>Canvas Size</th>
-      <!-- Add more columns if needed -->
-    </tr>
-  </thead>
-  <tbody>
-    @for (order of orders; track order) {
-      <tr>
-        <td>{{ order.imageUrl }}</td>
-        <td>{{ order.numberOfPeople }}</td>
-        <td>{{ order.canvasSize }}</td>
-      </tr>
-    }
+<div class="px-4 pb-4 xl:pt-4 sm:pt-32">
+<h2 class="font-play-fair semibold sm:text-2xl xl:text-4xl sm:mb-4">Orders</h2>
 
-    <!-- Add more columns if needed -->
-  </tbody>
-</table>
+<div class="xl:p-6">
+  <div class="table border-separate bg-gray-400 p-2 sm:w-full xl:w-1/2 ...">
+    <div class="table-header-group border xl:text-2xl sm:text-lg">
+      <div class="table-row">
+        <div class="table-cell text-left ...">Image</div>
+        <div class="table-cell text-left ...">Number of People</div>
+        <div class="table-cell text-left ...">Canvas Size</div>
+      </div>
+    </div>
+    <div class="table-row-group">
+      @for (order of orders; track order) {
+      <div class="table-row p-2.5">
+        <div class="table-cell ...">
+          @for (uploadedFile of order.imageUrl; track uploadedFile) {
+            @if (uploadedFile.cdnUrl) {
+              <img src="{{ uploadedFile.cdnUrl }}" class="w-20 h-20" />
+            }
+          }
+        </div>
+        <div class="table-cell ...">{{ order.numberOfPeople }}</div>
+        <div class="table-cell ...">{{ order.canvasSize }}</div>
+      </div>
+    }
+    </div>
+  </div>
+  
+</div>
+</div>
+

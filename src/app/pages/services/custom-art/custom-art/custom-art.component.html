@@ -95,11 +95,22 @@
 
       <mat-step>
         <ng-template matStepLabel>Review Changes</ng-template>
+        <div class="py-5">
+          <div class="flex w-auto gap-5 sm:flex-col md:flex-row">
+            @for (uploadedFile of uploadedFiles; track uploadedFiles) {
+              @if (uploadedFile.cdnUrl) {
+                <img src="{{ uploadedFile.cdnUrl }}" class="w-20 h-20" />
+              }
+            }
+          </div>
+          <p>Number of Persons: {{ formData.numberOfPeople }}</p>
+          <p>Canvas Size: {{ formData.canvasSize }}</p>
+        </div>        
         <div
           class="flex items-center justify-center p-3 mt-5 text-xl border cursor-pointer border-violet hover:bg-violet hover:text-white"
           (click)="submitForm()"
         >
-          SUBMIT
+          Add To Cart
         </div>
         <button mat-button matStepperPrevious>Back</button>
       </mat-step>
